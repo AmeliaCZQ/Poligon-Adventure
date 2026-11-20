@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aktiviti 3 – Teroka Sudut Pedalaman</title>
+<style>
+:root{color-scheme:light;--ink:#24324a;--blue:#4169a8;--pale:#eef4ff;--line:#d8e1ef;--gold:#f2b84b}
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:transparent;color:var(--ink);font-family:Arial,sans-serif;line-height:1.55}
+.wrap{max-width:960px;margin:0 auto}
+.panel{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:18px;padding:clamp(16px,3vw,28px);box-shadow:0 8px 24px rgba(35,55,90,.08)}
+h1{margin:0 0 8px;color:#284d83;font-size:clamp(22px,4vw,30px)}
+.intro{margin:0 0 18px;color:#52627a}
+h2{font-size:19px;margin:22px 0 10px;color:#315b91}
+ol{padding-left:22px}li{margin:5px 0}
+.tip{background:#fff8e8;border-left:4px solid var(--gold);padding:11px 14px;border-radius:8px;margin:14px 0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:540px;margin-top:8px}
+th,td{border:1px solid var(--line);padding:11px;text-align:center}
+th{background:var(--pale);color:#294e80}
+td:first-child{text-align:left;font-weight:600}
+input{width:100%;max-width:125px;padding:9px;border:1px solid #b9c8dc;border-radius:8px;font-size:16px;text-align:center}
+textarea{width:100%;min-height:72px;resize:vertical;padding:10px;border:1px solid #b9c8dc;border-radius:9px;font:inherit}
+.q{padding:13px 0;border-bottom:1px solid #e7edf5}.q:last-child{border-bottom:0}
+.q label{display:block;font-weight:600;margin-bottom:7px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+button{border:0;border-radius:10px;padding:11px 16px;font-size:15px;font-weight:700;cursor:pointer}
+.check{background:#315f9d;color:white}.print{background:#eaf0fa;color:#294e80}.clear{background:#f4eeee;color:#8a4141}
+#status{margin-top:12px;font-weight:600}.small{color:#65748a;font-size:13px;margin-top:14px}
+@media print{body{padding:0}.panel{box-shadow:none;border:0}.actions,.small{display:none}textarea,input{border:0;border-bottom:1px solid #777}}
+</style>
+</head>
+<body>
+<div class="wrap"><section class="panel">
+<h1>Aktiviti 3: Teroka Sudut Pedalaman</h1>
+<p class="intro">Mari kenali sudut pedalaman dan perhatikan ciri-cirinya dalam poligon sekata melalui penerokaan GeoGebra!</p>
+<h2>Arahan Penerokaan</h2>
+<ol>
+<li>Perhatikan lima bentuk poligon yang dipaparkan dalam GeoGebra.</li>
+<li>Kenal pasti sudut yang terletak di bahagian dalam setiap poligon.</li>
+<li>Perhatikan sudut pedalaman pada setiap bucu poligon.</li>
+<li>Bandingkan sudut pedalaman dalam poligon sekata yang sama.</li>
+<li>Lengkapkan jadual pemerhatian dan jawab soalan penerokaan.</li>
+</ol>
+<div class="tip"><strong>Ingat!</strong> Sudut pedalaman ialah sudut yang terbentuk di bahagian dalam poligon oleh dua sisi yang bersebelahan.</div>
+<h2>Bahagian A – Jadual Pemerhatian</h2>
+<p>Catatkan bilangan sudut pedalaman dan pemerhatian kamu bagi setiap poligon.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Bentuk Poligon</th><th>Bilangan Sudut Pedalaman</th><th>Pemerhatian Sudut Pedalaman</th></tr></thead>
+<tbody>
+<tr><td>Segi tiga sama sisi</td><td><input type="number" min="0" max="20" aria-label="Bilangan sudut segi tiga"></td><td><input type="text" aria-label="Pemerhatian segi tiga" placeholder="Contoh: sama besar"></td></tr>
+<tr><td>Segi empat sama</td><td><input type="number" min="0" max="20" aria-label="Bilangan sudut segi empat"></td><td><input type="text" aria-label="Pemerhatian segi empat" placeholder="Pemerhatian kamu"></td></tr>
+<tr><td>Segi lima sekata</td><td><input type="number" min="0" max="20" aria-label="Bilangan sudut segi lima"></td><td><input type="text" aria-label="Pemerhatian segi lima" placeholder="Pemerhatian kamu"></td></tr>
+<tr><td>Segi enam sekata</td><td><input type="number" min="0" max="20" aria-label="Bilangan sudut segi enam"></td><td><input type="text" aria-label="Pemerhatian segi enam" placeholder="Pemerhatian kamu"></td></tr>
+<tr><td>Segi lapan sekata</td><td><input type="number" min="0" max="20" aria-label="Bilangan sudut segi lapan"></td><td><input type="text" aria-label="Pemerhatian segi lapan" placeholder="Pemerhatian kamu"></td></tr>
+</tbody></table></div>
+<h2>Bahagian B – Soalan Penerokaan</h2>
+<div class="q"><label for="q1">1. Di manakah kedudukan sudut pedalaman dalam sesuatu poligon?</label><textarea id="q1" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+<div class="q"><label for="q2">2. Berapakah bilangan sudut pedalaman yang terdapat dalam segi lima sekata?</label><textarea id="q2" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+<div class="q"><label for="q3">3. Apakah persamaan sudut pedalaman bagi setiap poligon sekata?</label><textarea id="q3" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+<div class="q"><label for="q4">4. Mengapakah sudut pedalaman dalam poligon sekata mempunyai saiz yang sama?</label><textarea id="q4" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+<div class="actions">
+<button class="check" type="button" onclick="checkWork()">Semak Kelengkapan</button>
+<button class="print" type="button" onclick="window.print()">Cetak / Simpan PDF</button>
+<button class="clear" type="button" onclick="clearWork()">Kosongkan Jawapan</button>
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<p class="small">Nota: Butang “Semak Kelengkapan” menyemak sama ada semua ruangan telah diisi, bukan menentukan ketepatan jawapan. Jawapan tidak dihantar atau disimpan kepada guru.</p>
+</section></div>
+<script>
+function checkWork(){const fields=[...document.querySelectorAll('input,textarea')];const done=fields.filter(e=>e.value.trim()!=='').length;const s=document.getElementById('status');if(done===fields.length){s.textContent='Syabas! Semua ruangan telah dilengkapkan. Semak semula jawapan kamu.';s.style.color='#23734b'}else{s.textContent=`Kamu telah melengkapkan ${done} daripada ${fields.length} ruangan. Teruskan usaha kamu!`;s.style.color='#9a6415'}}
+function clearWork(){document.querySelectorAll('input,textarea').forEach(e=>e.value='');document.getElementById('status').textContent=''}
+</script>
+</body></html>
