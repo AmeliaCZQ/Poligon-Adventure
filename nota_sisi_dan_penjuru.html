@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nota Interaktif: Sisi dan Penjuru</title>
+<style>
+  :root{
+    --ink:#24345b; --blue:#4778f5; --purple:#8b5cf6; --teal:#14b8a6;
+    --yellow:#ffd65a; --pink:#ff8eae; --line:#dfe7ff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:transparent!important;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+  body{padding:12px}
+  .wrap{max-width:980px;margin:0 auto;background:transparent}
+  .hero{
+    position:relative;overflow:hidden;border-radius:24px;padding:25px 24px;
+    background:linear-gradient(120deg,#eaf2ff 0%,#f2eaff 55%,#e6fffb 100%);
+    border:2px solid #fff;box-shadow:0 8px 24px rgba(68,93,170,.12);
+  }
+  .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;opacity:.45}
+  .hero:before{width:130px;height:130px;background:#ffd65a;right:-35px;top:-50px}
+  .hero:after{width:90px;height:90px;background:#9ee8df;right:95px;bottom:-55px}
+  .hero-inner{position:relative;z-index:1;display:flex;align-items:center;gap:18px}
+  .hero-icon{width:76px;height:76px;flex:0 0 76px;border-radius:22px;background:#fff;display:grid;place-items:center;font-size:39px;box-shadow:0 5px 12px #a9b9e855}
+  h1{font-size:clamp(24px,4vw,36px);margin:0 0 7px;color:#29458c}
+  .hero p{margin:0;font-size:16px;line-height:1.5}
+  .tag{display:inline-block;margin-top:12px;background:#fff;color:#5a49b8;border-radius:99px;padding:7px 13px;font-weight:700;font-size:12px}
+  .section{margin-top:18px;background:#fff;border:2px solid var(--line);border-radius:21px;padding:20px;box-shadow:0 5px 16px rgba(65,87,150,.07)}
+  .section-title{display:flex;align-items:center;gap:11px;margin:0 0 14px;font-size:22px;color:#29458c}
+  .number{width:35px;height:35px;border-radius:12px;background:#e8efff;color:#315fd0;display:grid;place-items:center;font-weight:800}
+  .intro{line-height:1.65;margin:0 0 15px;font-size:15px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  .concept{border-radius:17px;padding:16px;background:#f5f8ff;border:1px solid #e2eaff}
+  .concept.purple{background:#f8f4ff;border-color:#eadfff}
+  .concept h3{margin:0 0 8px;font-size:18px;color:#315fd0}
+  .concept.purple h3{color:#7650c9}
+  .concept p{margin:0;line-height:1.6;font-size:14px}
+  .diagram{margin:12px auto 0;max-width:210px;background:#fff;border-radius:15px;padding:8px}
+  .diagram svg{width:100%;height:auto;display:block}
+  .tip{margin-top:12px;padding:12px 14px;border-radius:14px;background:#fff7d9;border:1px solid #ffe69a;line-height:1.55;font-size:14px}
+  .tip strong{color:#8b6500}
+  .table-wrap{overflow-x:auto;border-radius:14px;border:1px solid #e4eaff}
+  table{border-collapse:collapse;width:100%;min-width:420px;background:#fff;text-align:center}
+  th{background:#eaf0ff;color:#29458c;padding:12px 9px;font-size:14px}
+  td{padding:11px 9px;border-top:1px solid #edf0fa;font-size:14px}
+  tr:nth-child(even) td{background:#fafbff}
+  .shape{font-weight:700;text-align:left}
+  .shape-icon{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:7px;vertical-align:middle;background:#f1f5ff;border-radius:9px}
+  .count{display:inline-block;min-width:30px;padding:5px 9px;border-radius:10px;background:#e9f8f5;color:#087f70;font-weight:800}
+  .compare-note{margin:13px 0 0;padding:13px 15px;background:#eafffa;border:1px solid #b9f0e6;border-radius:14px;font-size:14px;line-height:1.6}
+  .compare-note strong{color:#087f70}
+  .footer{text-align:center;margin:17px 0 4px;padding:15px;border-radius:17px;background:linear-gradient(100deg,#eaf2ff,#f5edff);font-weight:700;color:#5544a8;line-height:1.5}
+  .small{font-size:12px;color:#64749a;margin-top:8px}
+  @media(max-width:620px){
+    body{padding:6px}.hero{padding:19px 16px;border-radius:19px}
+    .hero-icon{width:58px;height:58px;flex-basis:58px;font-size:30px;border-radius:17px}
+    .hero p{font-size:14px}.section{padding:15px;border-radius:18px}
+    .two-col{grid-template-columns:1fr}.section-title{font-size:20px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-icon" aria-hidden="true">📐</div>
+      <div>
+        <h1>Sisi dan Penjuru</h1>
+        <p>Jom kenali bahagian yang membentuk sesuatu poligon!</p>
+        <span class="tag">MATEMATIK TAHUN 5 · NOTA PEMBELAJARAN</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number">A</span> Apakah itu sisi?</h2>
+    <div class="two-col">
+      <div class="concept">
+        <h3>Maksud Sisi</h3>
+        <p>Sisi ialah <b>garis lurus</b> yang membentuk sempadan sesuatu poligon. Sisi-sisi bersambung untuk membentuk satu bentuk tertutup.</p>
+        <div class="diagram">
+          <svg viewBox="0 0 220 150" role="img" aria-label="Segi tiga dengan satu sisi berwarna biru">
+            <polygon points="110,18 25,128 195,128" fill="#eef3ff" stroke="#aebbd9" stroke-width="5" stroke-linejoin="round"/>
+            <line x1="25" y1="128" x2="195" y2="128" stroke="#4778f5" stroke-width="9" stroke-linecap="round"/>
+            <text x="110" y="146" text-anchor="middle" font-size="12" fill="#315fd0" font-weight="bold">Sisi</text>
+          </svg>
+        </div>
+      </div>
+      <div class="concept purple">
+        <h3>Ingat!</h3>
+        <p>Bagi <b>poligon sekata</b>, semua sisinya mempunyai <b>panjang yang sama</b>.</p>
+        <div class="diagram">
+          <svg viewBox="0 0 220 150" role="img" aria-label="Segi empat sama dengan semua sisi sama panjang">
+            <rect x="55" y="20" width="110" height="110" rx="2" fill="#f4edff" stroke="#8b5cf6" stroke-width="6"/>
+            <text x="110" y="145" text-anchor="middle" font-size="12" fill="#7650c9" font-weight="bold">Semua sisi sama panjang</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <h3 style="margin:18px 0 10px;color:#29458c">Contoh bilangan sisi</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Bentuk poligon</th><th>Bilangan sisi</th></tr></thead>
+        <tbody>
+          <tr><td class="shape"><span class="shape-icon">🔺</span>Segi tiga sama sisi</td><td><span class="count">3</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">🟦</span>Segi empat sama</td><td><span class="count">4</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">⬟</span>Segi lima sekata</td><td><span class="count">5</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">⬡</span>Segi enam sekata</td><td><span class="count">6</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">🛑</span>Segi lapan sekata</td><td><span class="count">8</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number" style="background:#f0eaff;color:#7650c9">B</span> Apakah itu penjuru?</h2>
+    <div class="two-col">
+      <div class="concept purple">
+        <h3>Maksud Penjuru</h3>
+        <p>Penjuru ialah <b>titik pertemuan antara dua sisi</b> sesuatu poligon. Penjuru juga dikenali sebagai <b>bucu</b>.</p>
+        <div class="diagram">
+          <svg viewBox="0 0 220 150" role="img" aria-label="Segi empat sama dengan satu penjuru ditandakan">
+            <rect x="55" y="18" width="110" height="110" fill="#f4edff" stroke="#aebbd9" stroke-width="5"/>
+            <circle cx="55" cy="18" r="9" fill="#ff648c" stroke="#fff" stroke-width="3"/>
+            <path d="M55 18 L55 48 L85 48" fill="none" stroke="#ff648c" stroke-width="2" stroke-dasharray="4 3"/>
+            <text x="92" y="145" text-anchor="middle" font-size="12" fill="#7650c9" font-weight="bold">Penjuru / bucu</text>
+          </svg>
+        </div>
+      </div>
+      <div class="concept">
+        <h3>Cara mengenal pasti</h3>
+        <p>Cari titik tempat dua sisi bertemu. Setiap titik pertemuan itu ialah satu penjuru.</p>
+        <div class="diagram">
+          <svg viewBox="0 0 220 150" role="img" aria-label="Segi tiga dengan tiga penjuru ditandakan">
+            <polygon points="110,18 25,128 195,128" fill="#eef3ff" stroke="#4778f5" stroke-width="5" stroke-linejoin="round"/>
+            <circle cx="110" cy="18" r="8" fill="#ff648c" stroke="white" stroke-width="3"/>
+            <circle cx="25" cy="128" r="8" fill="#ff648c" stroke="white" stroke-width="3"/>
+            <circle cx="195" cy="128" r="8" fill="#ff648c" stroke="white" stroke-width="3"/>
+            <text x="110" y="146" text-anchor="middle" font-size="12" fill="#315fd0" font-weight="bold">3 penjuru</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <h3 style="margin:18px 0 10px;color:#29458c">Contoh bilangan penjuru</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Bentuk poligon</th><th>Bilangan penjuru</th></tr></thead>
+        <tbody>
+          <tr><td class="shape"><span class="shape-icon">🔺</span>Segi tiga sama sisi</td><td><span class="count">3</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">🟦</span>Segi empat sama</td><td><span class="count">4</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">⬟</span>Segi lima sekata</td><td><span class="count">5</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">⬡</span>Segi enam sekata</td><td><span class="count">6</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">🛑</span>Segi lapan sekata</td><td><span class="count">8</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip"><strong>💡 Tahukah Kamu?</strong><br>Bilangan sisi sesuatu poligon adalah sama dengan bilangan penjuru. Contohnya, segi lima mempunyai <b>5 sisi</b> dan <b>5 penjuru</b>.</div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="number" style="background:#e4fbf6;color:#078875">★</span> Kenali Sisi dan Penjuru Poligon</h2>
+    <p class="intro">Perhatikan jadual di bawah. Bilangan sisi dan bilangan penjuru bagi setiap poligon adalah sama.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Poligon</th><th>Bilangan sisi</th><th>Bilangan penjuru</th></tr></thead>
+        <tbody>
+          <tr><td class="shape"><span class="shape-icon">🔺</span>Segi tiga</td><td><span class="count">3</span></td><td><span class="count">3</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">🟦</span>Segi empat</td><td><span class="count">4</span></td><td><span class="count">4</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">⬟</span>Segi lima</td><td><span class="count">5</span></td><td><span class="count">5</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">⬡</span>Segi enam</td><td><span class="count">6</span></td><td><span class="count">6</span></td></tr>
+          <tr><td class="shape"><span class="shape-icon">🛑</span>Segi lapan</td><td><span class="count">8</span></td><td><span class="count">8</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare-note"><strong>🌟 Kesimpulan penting</strong><br>Bilangan sisi = Bilangan penjuru. Cuba kira sisi dan penjuru pada bentuk poligon sebelum melihat jawapannya!</div>
+  </section>
+
+  <div class="footer">🎉 Hebat! Sekarang kamu sudah tahu cara mengenal pasti sisi dan penjuru poligon. Teruskan pengembaraan matematik kamu!</div>
+  <p class="small" style="text-align:center">Nota pembelajaran · POLYGON ADVENTURE</p>
+</div>
+</body>
+</html>
