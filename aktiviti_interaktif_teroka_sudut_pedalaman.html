@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teroka Sudut Pedalaman</title>
+<style>
+:root{--blue:#3157c8;--purple:#7651c9;--ink:#26324b;--muted:#65718a;--line:#dce4f2}
+*{box-sizing:border-box}body{margin:0;padding:18px;background:transparent;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:900px;margin:auto}.hero{padding:24px;border-radius:20px;background:linear-gradient(120deg,#3157c8,#7651c9);color:#fff}
+.hero h1{margin:0 0 8px;font-size:clamp(23px,4vw,32px)}.hero p{margin:0;line-height:1.55}.tag{display:inline-block;margin-bottom:10px;padding:6px 11px;border-radius:30px;background:#ffffff30;font-size:12px;font-weight:bold}
+.panel{margin-top:17px;padding:21px;border:1px solid var(--line);border-radius:17px;background:#ffffffef;box-shadow:0 4px 15px #23376410}
+h2{margin:0 0 8px;color:var(--blue);font-size:21px}.hint{margin:0 0 15px;color:var(--muted);line-height:1.55;font-size:14px}
+.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:580px}th,td{border:1px solid var(--line);padding:12px 10px;text-align:left}th{background:#eef2ff;color:#334b9b;font-size:14px}td{background:white;font-size:14px}td:first-child{font-weight:bold}
+input[type=text],textarea{width:100%;padding:11px 12px;border:1.5px solid #cbd5e8;border-radius:10px;font:inherit;color:var(--ink);background:white;outline:none}
+input:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3157c81a}textarea{min-height:76px;resize:vertical;line-height:1.5}
+.q{padding:15px 0;border-bottom:1px solid #edf0f7}.q:last-child{border:0;padding-bottom:0}.q label{display:block;margin-bottom:9px;font-weight:bold;line-height:1.45}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}button{border:0;border-radius:11px;padding:12px 17px;cursor:pointer;font-weight:bold;font-size:14px}
+.primary{color:white;background:var(--blue)}.secondary{color:#33415f;background:#edf1f8}
+.result{display:none;margin-top:15px;padding:14px 16px;border-radius:12px;line-height:1.55}.result.good{display:block;background:#e7f8ed;color:#17643a}.result.note{display:block;background:#fff3c4;color:#725411}
+.footer{color:var(--muted);font-size:12px;text-align:center;margin:15px 0 2px}
+@media(max-width:600px){body{padding:10px}.panel{padding:15px}.hero{padding:20px}}
+@media print{body{padding:0}.hero{color:#172554;background:#eef2ff}.actions,.footer{display:none}.panel{box-shadow:none;break-inside:avoid}}
+</style></head>
+<body><div class="wrap">
+<header class="hero"><span class="tag">AKTIVITI PENEROKAAN MATEMATIK · TAHUN 5</span>
+<h1>Teroka Sudut Pedalaman</h1><p>Perhatikan poligon dalam GeoGebra. Kenal pasti sudut pedalaman dan catat pemerhatian kamu dalam jadual serta soalan di bawah.</p></header>
+<section class="panel"><h2>Bahagian A – Jadual Pemerhatian</h2>
+<p class="hint">Isi ruang pemerhatian berdasarkan aktiviti GeoGebra. Perhatikan kedudukan sudut pedalaman dan perkara yang sama pada sudut-sudut dalam setiap poligon sekata.</p>
+<div class="table-scroll"><table><thead><tr><th>Bentuk poligon</th><th>Bilangan sisi</th><th>Pemerhatian sudut pedalaman</th></tr></thead><tbody>
+<tr><td>Segi tiga sama sisi</td><td>3</td><td><input type="text" id="obs1" placeholder="Tulis pemerhatian kamu"></td></tr>
+<tr><td>Segi empat sama</td><td>4</td><td><input type="text" id="obs2" placeholder="Tulis pemerhatian kamu"></td></tr>
+<tr><td>Segi lima sekata</td><td>5</td><td><input type="text" id="obs3" placeholder="Tulis pemerhatian kamu"></td></tr>
+<tr><td>Segi enam sekata</td><td>6</td><td><input type="text" id="obs4" placeholder="Tulis pemerhatian kamu"></td></tr>
+<tr><td>Segi lapan sekata</td><td>8</td><td><input type="text" id="obs5" placeholder="Tulis pemerhatian kamu"></td></tr>
+</tbody></table></div></section>
+<section class="panel"><h2>Bahagian B – Soalan Penerokaan</h2>
+<p class="hint">Jawab menggunakan ayat sendiri berdasarkan pemerhatian kamu.</p>
+<div class="q"><label for="q1">1. Di manakah kedudukan sudut pedalaman dalam sesuatu poligon?</label><textarea id="q1" placeholder="Taip jawapan kamu di sini..."></textarea></div>
+<div class="q"><label for="q2">2. Berapakah bilangan sudut pedalaman bagi segi lima sekata?</label><textarea id="q2" placeholder="Taip jawapan kamu di sini..."></textarea></div>
+<div class="q"><label for="q3">3. Apakah persamaan sudut pedalaman bagi sebuah poligon sekata?</label><textarea id="q3" placeholder="Taip jawapan kamu di sini..."></textarea></div>
+<div class="q"><label for="q4">4. Mengapakah sudut pedalaman bagi poligon sekata dikatakan sama besar?</label><textarea id="q4" placeholder="Taip jawapan kamu di sini..."></textarea></div>
+<div class="actions"><button class="primary" onclick="checkWork()">Semak Jawapan</button><button class="secondary" onclick="window.print()">Cetak / Simpan PDF</button><button class="secondary" onclick="clearWork()">Kosongkan Jawapan</button></div>
+<div id="result" class="result" role="status" aria-live="polite"></div></section>
+<p class="footer">Teruskan penerokaan dengan teliti. Semak semula jawapan kamu sebelum menghantar kepada guru.</p>
+</div>
+<script>
+function checkWork(){const ids=['obs1','obs2','obs3','obs4','obs5','q1','q2','q3','q4'];const n=ids.filter(id=>document.getElementById(id).value.trim()!=='').length;const r=document.getElementById('result');r.className='result '+(n===ids.length?'good':'note');r.innerHTML=n===ids.length?'<strong>Bagus!</strong> Semua ruang telah diisi. Semak semula ketepatan jawapan kamu berdasarkan pemerhatian GeoGebra.':'<strong>Teruskan usaha!</strong> Kamu telah mengisi '+n+' daripada '+ids.length+' ruang. Lengkapkan ruang yang masih kosong.'}
+function clearWork(){if(!confirm('Adakah kamu pasti mahu mengosongkan semua jawapan?'))return;document.querySelectorAll('input[type=text],textarea').forEach(e=>e.value='');const r=document.getElementById('result');r.className='result';r.textContent=''}
+</script></body></html>
