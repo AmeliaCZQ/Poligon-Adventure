@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penerokaan Pepenjuru Poligon</title>
+<style>
+  :root {
+    --ink: #24324a;
+    --line: #a9b8ca;
+    --accent: #3267a8;
+    --soft: rgba(255,255,255,.72);
+    --blue: #eaf4ff;
+    --green: #eaf8ef;
+    --yellow: #fff6dc;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent !important; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    padding: 16px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  .heading {
+    border: 2px solid rgba(50,103,168,.35);
+    background: rgba(234,244,255,.72);
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: clamp(1.35rem, 3vw, 2rem); margin: 0 0 6px; color: #214f87; }
+  .subtitle { margin: 0; font-size: .98rem; }
+  .section {
+    background: var(--soft);
+    border: 1px solid rgba(105,126,153,.48);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 14px 0;
+    backdrop-filter: blur(2px);
+  }
+  h2 { font-size: 1.2rem; margin: 0 0 12px; color: #214f87; }
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 470px; background: rgba(255,255,255,.55); border-radius: 10px; overflow: hidden; }
+  th, td { border: 1px solid var(--line); padding: 11px 12px; text-align: center; }
+  th { background: rgba(219,235,252,.86); font-weight: 700; }
+  td:first-child { text-align: left; font-weight: 600; }
+  .shape { display: flex; align-items: center; gap: 10px; }
+  .shape svg { width: 43px; height: 38px; flex: 0 0 auto; }
+  .number { display: inline-block; min-width: 34px; padding: 3px 9px; border-radius: 99px; background: #e5efff; color: #214f87; font-weight: 800; }
+  .note { margin: 10px 0 0; font-size: .9rem; color: #526176; }
+  .question { border-radius: 12px; padding: 13px 14px; margin: 10px 0; background: rgba(234,244,255,.72); border: 1px solid rgba(50,103,168,.22); }
+  .question:nth-of-type(even) { background: rgba(234,248,239,.75); }
+  .question p { margin: 0 0 8px; font-weight: 650; }
+  textarea {
+    width: 100%; min-height: 62px; resize: vertical; border: 1px solid #aab9cc;
+    border-radius: 9px; padding: 9px 10px; font: inherit; color: var(--ink);
+    background: rgba(255,255,255,.82);
+  }
+  textarea:focus { outline: 2px solid #78a9e8; border-color: #3267a8; }
+  .actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+  button {
+    border: 0; border-radius: 10px; padding: 10px 14px; font: inherit;
+    font-weight: 700; cursor: pointer; background: #3267a8; color: white;
+  }
+  button.secondary { background: #e6edf5; color: #24324a; }
+  button:hover { filter: brightness(.96); }
+  .feedback { margin-top: 10px; padding: 10px 12px; border-radius: 9px; background: var(--yellow); display: none; }
+  .footer { font-size: .84rem; text-align: center; color: #627087; padding: 8px; }
+  @media (max-width: 560px) { body { padding: 8px; } .section { padding: 10px; } th,td { padding: 8px 7px; } }
+  @media print { body { padding: 0; } .actions { display:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="heading">
+    <h1>🔎 Penerokaan Pepenjuru Poligon</h1>
+    <p class="subtitle">Perhatikan bilangan bucu dan pepenjuru bagi setiap poligon. Kemudian, jawab soalan penerokaan menggunakan pemerhatian anda.</p>
+  </header>
+
+  <section class="section">
+    <h2>Bahagian A – Jadual Pemerhatian</h2>
+    <div class="table-scroll">
+      <table aria-label="Jadual pemerhatian bilangan bucu dan pepenjuru">
+        <thead><tr><th>Bentuk Poligon</th><th>Bilangan Bucu</th><th>Bilangan Pepenjuru</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="shape"><svg viewBox="0 0 60 50" aria-hidden="true"><polygon points="30,5 5,44 55,44" fill="#b9dcff" stroke="#3267a8" stroke-width="2.5"/></svg>Segi tiga sama sisi</div></td>
+            <td><span class="number">3</span></td><td><span class="number">0</span></td>
+          </tr>
+          <tr>
+            <td><div class="shape"><svg viewBox="0 0 60 50" aria-hidden="true"><rect x="10" y="5" width="40" height="40" fill="#c9efd5" stroke="#2d8050" stroke-width="2.5"/></svg>Segi empat sama</div></td>
+            <td><span class="number">4</span></td><td><span class="number">2</span></td>
+          </tr>
+          <tr>
+            <td><div class="shape"><svg viewBox="0 0 60 50" aria-hidden="true"><polygon points="30,4 54,21 45,46 15,46 6,21" fill="#ffe6a3" stroke="#a56c08" stroke-width="2.5"/></svg>Segi lima sekata</div></td>
+            <td><span class="number">5</span></td><td><span class="number">5</span></td>
+          </tr>
+          <tr>
+            <td><div class="shape"><svg viewBox="0 0 60 50" aria-hidden="true"><polygon points="17,5 43,5 56,25 43,45 17,45 4,25" fill="#f0d9ff" stroke="#8150a5" stroke-width="2.5"/></svg>Segi enam sekata</div></td>
+            <td><span class="number">6</span></td><td><span class="number">9</span></td>
+          </tr>
+          <tr>
+            <td><div class="shape"><svg viewBox="0 0 60 50" aria-hidden="true"><polygon points="20,3 40,3 51,12 51,38 40,47 20,47 9,38 9,12" fill="#ffd9d9" stroke="#b54c4c" stroke-width="2.5"/></svg>Segi lapan sekata</div></td>
+            <td><span class="number">8</span></td><td><span class="number">20</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Pepenjuru ialah garis lurus yang menghubungkan dua bucu yang tidak bersebelahan. Garis pepenjuru berada di dalam poligon.</p>
+  </section>
+
+  <section class="section">
+    <h2>Bahagian B – Soalan Penerokaan</h2>
+    <div class="question">
+      <p>1. Apakah yang dimaksudkan dengan pepenjuru?</p>
+      <textarea aria-label="Jawapan soalan 1" placeholder="Taip jawapan anda di sini..."></textarea>
+    </div>
+    <div class="question">
+      <p>2. Mengapakah segi tiga tidak mempunyai pepenjuru?</p>
+      <textarea aria-label="Jawapan soalan 2" placeholder="Taip jawapan anda di sini..."></textarea>
+    </div>
+    <div class="question">
+      <p>3. Apakah yang berlaku kepada bilangan pepenjuru apabila bilangan bucu poligon bertambah?</p>
+      <textarea aria-label="Jawapan soalan 3" placeholder="Taip jawapan anda di sini..."></textarea>
+    </div>
+    <div class="question">
+      <p>4. Apakah perbezaan antara sisi dengan pepenjuru?</p>
+      <textarea aria-label="Jawapan soalan 4" placeholder="Taip jawapan anda di sini..."></textarea>
+    </div>
+    <div class="actions">
+      <button type="button" onclick="window.print()">Cetak / Simpan sebagai PDF</button>
+      <button type="button" class="secondary" onclick="clearAnswers()">Kosongkan Jawapan</button>
+      <button type="button" class="secondary" onclick="showHint()">Petunjuk</button>
+    </div>
+    <div id="feedback" class="feedback" role="status"></div>
+  </section>
+  <div class="footer">Aktiviti Matematik • Latar belakang halaman ini telus (transparent)</div>
+</div>
+<script>
+function clearAnswers() {
+  document.querySelectorAll('textarea').forEach(function(box) { box.value = ''; });
+  const feedback = document.getElementById('feedback');
+  feedback.style.display = 'block';
+  feedback.textContent = 'Semua ruang jawapan telah dikosongkan.';
+}
+function showHint() {
+  const feedback = document.getElementById('feedback');
+  feedback.style.display = 'block';
+  feedback.textContent = 'Petunjuk: Sisi menyambungkan bucu yang bersebelahan. Pepenjuru menyambungkan bucu yang tidak bersebelahan. Bandingkan bilangan pepenjuru apabila bilangan bucu meningkat.';
+}
+</script>
+</body>
+</html>
