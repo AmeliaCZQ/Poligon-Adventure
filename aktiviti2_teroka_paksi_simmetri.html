@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aktiviti 2 – Teroka Paksi Simetri</title>
+<style>
+  :root { color-scheme: light; --ink:#24324a; --blue:#4169a8; --pale:#eef4ff; --line:#d8e1ef; --accent:#f2b84b; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:20px; background:transparent; color:var(--ink); font-family:Arial, sans-serif; line-height:1.55; }
+  .wrap { max-width:960px; margin:0 auto; }
+  .panel { background:rgba(255,255,255,.96); border:1px solid var(--line); border-radius:18px; padding:clamp(16px,3vw,28px); box-shadow:0 8px 24px rgba(35,55,90,.08); }
+  h1 { margin:0 0 8px; color:#284d83; font-size:clamp(22px,4vw,30px); }
+  .intro { margin:0 0 18px; color:#52627a; }
+  h2 { font-size:19px; margin:22px 0 10px; color:#315b91; }
+  ol { padding-left:22px; }
+  li { margin:5px 0; }
+  .tip { background:#fff8e8; border-left:4px solid var(--accent); padding:11px 14px; border-radius:8px; margin:14px 0; }
+  .table-wrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:480px; margin-top:8px; }
+  th,td { border:1px solid var(--line); padding:11px; text-align:center; }
+  th { background:var(--pale); color:#294e80; }
+  td:first-child { text-align:left; font-weight:600; }
+  input[type=number] { width:100%; max-width:110px; padding:9px; border:1px solid #b9c8dc; border-radius:8px; font-size:16px; text-align:center; }
+  textarea { width:100%; min-height:70px; resize:vertical; padding:10px; border:1px solid #b9c8dc; border-radius:9px; font:inherit; }
+  .q { padding:13px 0; border-bottom:1px solid #e7edf5; }
+  .q:last-child { border-bottom:0; }
+  .q label { display:block; font-weight:600; margin-bottom:7px; }
+  .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+  button { border:0; border-radius:10px; padding:11px 16px; font-size:15px; font-weight:700; cursor:pointer; }
+  .check { background:#315f9d; color:white; }
+  .print { background:#eaf0fa; color:#294e80; }
+  .clear { background:#f4eeee; color:#8a4141; }
+  #status { margin-top:12px; font-weight:600; }
+  .small { color:#65748a; font-size:13px; margin-top:14px; }
+  @media print { body { padding:0; } .panel { box-shadow:none; border:0; } .actions,.small { display:none; } textarea,input { border:0; border-bottom:1px solid #777; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="panel">
+  <h1>Aktiviti 2: Teroka Paksi Simetri</h1>
+  <p class="intro">Mari teroka paksi simetri bagi poligon sekata melalui pemerhatian dan penerokaan GeoGebra!</p>
+
+  <h2>Arahan Penerokaan</h2>
+  <ol>
+    <li>Perhatikan lima bentuk poligon yang dipaparkan dalam GeoGebra.</li>
+    <li>Kenal pasti garisan yang membahagikan poligon kepada dua bahagian yang sama bentuk dan saiz.</li>
+    <li>Lukiskan semua paksi simetri bagi setiap poligon.</li>
+    <li>Hitung bilangan paksi simetri bagi setiap poligon.</li>
+    <li>Lengkapkan jadual pemerhatian dan jawab soalan penerokaan.</li>
+  </ol>
+  <div class="tip"><strong>Ingat!</strong> Paksi simetri ialah garis yang membahagikan sesuatu bentuk kepada dua bahagian yang sama bentuk dan saiz, seolah-olah kedua-dua bahagian itu boleh bertindih dengan tepat.</div>
+
+  <h2>Bahagian A – Jadual Pemerhatian</h2>
+  <p>Catatkan bilangan paksi simetri yang kamu temui bagi setiap poligon.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Bentuk Poligon</th><th>Bilangan Paksi Simetri</th></tr></thead>
+    <tbody>
+      <tr><td>Segi tiga sama sisi</td><td><input type="number" min="0" max="20" aria-label="Paksi simetri segi tiga sama sisi"></td></tr>
+      <tr><td>Segi empat sama</td><td><input type="number" min="0" max="20" aria-label="Paksi simetri segi empat sama"></td></tr>
+      <tr><td>Segi lima sekata</td><td><input type="number" min="0" max="20" aria-label="Paksi simetri segi lima sekata"></td></tr>
+      <tr><td>Segi enam sekata</td><td><input type="number" min="0" max="20" aria-label="Paksi simetri segi enam sekata"></td></tr>
+      <tr><td>Segi lapan sekata</td><td><input type="number" min="0" max="20" aria-label="Paksi simetri segi lapan sekata"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Bahagian B – Soalan Penerokaan</h2>
+  <div class="q"><label for="q1">1. Apakah yang dimaksudkan dengan paksi simetri?</label><textarea id="q1" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+  <div class="q"><label for="q2">2. Berapakah bilangan paksi simetri bagi segi empat sama?</label><textarea id="q2" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+  <div class="q"><label for="q3">3. Apakah hubungan antara bilangan sisi dengan bilangan paksi simetri bagi poligon sekata?</label><textarea id="q3" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+  <div class="q"><label for="q4">4. Adakah setiap poligon sekata mempunyai bilangan paksi simetri yang sama? Jelaskan jawapan kamu.</label><textarea id="q4" placeholder="Tulis jawapan kamu di sini..."></textarea></div>
+
+  <div class="actions">
+    <button class="check" type="button" onclick="checkWork()">Semak Kelengkapan</button>
+    <button class="print" type="button" onclick="window.print()">Cetak / Simpan PDF</button>
+    <button class="clear" type="button" onclick="clearWork()">Kosongkan Jawapan</button>
+  </div>
+  <div id="status" role="status" aria-live="polite"></div>
+  <p class="small">Nota: Butang “Semak Kelengkapan” menyemak sama ada semua ruangan telah diisi, bukan menentukan ketepatan jawapan. Jawapan tidak dihantar atau disimpan kepada guru.</p>
+</section>
+</div>
+<script>
+function checkWork() {
+  const fields = [...document.querySelectorAll('input, textarea')];
+  const done = fields.filter(el => el.value.trim() !== '').length;
+  const status = document.getElementById('status');
+  if (done === fields.length) {
+    status.textContent = 'Syabas! Semua ruangan telah dilengkapkan. Semak semula jawapan kamu.';
+    status.style.color = '#23734b';
+  } else {
+    status.textContent = `Kamu telah melengkapkan ${done} daripada ${fields.length} ruangan. Teruskan usaha kamu!`;
+    status.style.color = '#9a6415';
+  }
+}
+function clearWork() {
+  document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+  document.getElementById('status').textContent = '';
+}
+</script>
+</body>
+</html>
