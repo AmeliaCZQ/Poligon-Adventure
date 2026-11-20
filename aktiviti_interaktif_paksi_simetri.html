@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teroka Paksi Simetri</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:transparent;font-family:Arial,sans-serif;color:#26344a}
+.wrap{max-width:850px;margin:auto;padding:12px}.hero,.card{border-radius:17px;padding:18px;margin:12px 0}
+.hero{background:linear-gradient(120deg,#e8f4ff,#f1eaff);text-align:center;border:1px solid #d8e7fb}
+.card{background:rgba(255,255,255,.97);border:1px solid #dce6f2;box-shadow:0 3px 12px #234b7810}
+h1{color:#225da8;margin:8px 0}h2{font-size:20px;color:#285f9e;margin:0 0 12px}
+p,li{line-height:1.55}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:480px}
+th,td{border:1px solid #dce6f2;padding:10px;text-align:center}th{background:#eaf3ff}td:first-child{text-align:left;font-weight:bold}
+input,textarea{font:inherit;padding:10px;border:1.5px solid #cbd8e8;border-radius:9px;width:100%;background:white}
+input[type=number]{max-width:90px;text-align:center}.q{background:#f8faff;border:1px solid #e2eafa;border-radius:12px;padding:12px;margin:12px 0}
+label{display:block;font-weight:bold;margin-bottom:8px;line-height:1.4}textarea{min-height:75px}
+button{padding:12px 16px;border:0;border-radius:10px;font-weight:bold;cursor:pointer;margin:5px 5px 0 0}
+.primary{background:#2876d2;color:white}.secondary{background:#edf2f8;color:#33445c}
+#feedback{display:none;padding:14px;border-radius:12px;line-height:1.6;margin-top:12px}
+.note{font-size:13px;color:#607086}.tag{display:inline-block;background:#fff2bd;padding:5px 10px;border-radius:20px;font-size:13px}
+@media(max-width:550px){.wrap{padding:6px}.card,.hero{padding:14px}}
+@media print{button{display:none}.hero,.card{box-shadow:none}}
+</style></head>
+<body><main class="wrap">
+<header class="hero"><div style="font-size:36px">🔍 ⭐</div><h1>Jom Teroka Paksi Simetri!</h1>
+<p>Lengkapkan jadual pemerhatian dan jawab soalan penerokaan berdasarkan aktiviti GeoGebra.</p><span class="tag">Matematik Tahun 5 · Poligon Sekata</span></header>
+<section class="card"><h2>📘 Arahan Aktiviti</h2><ol>
+<li>Jalankan aktiviti GeoGebra dan perhatikan setiap poligon.</li><li>Kenal pasti garis yang membahagikan poligon kepada dua bahagian yang sama dan sepadan.</li><li>Hitung bilangan paksi simetri bagi setiap poligon.</li><li>Isi jadual dan jawab soalan penerokaan.</li><li>Tekan <b>Semak Jawapan</b> untuk melihat panduan jawapan.</li></ol></section>
+<section class="card"><h2>✏️ Bahagian A: Jadual Pemerhatian</h2><p class="note">Masukkan bilangan paksi simetri yang kamu temui.</p>
+<div class="scroll"><table><tr><th>Bentuk poligon</th><th>Bilangan sisi</th><th>Bilangan paksi simetri</th></tr>
+<tr><td>Segi tiga sama sisi</td><td>3</td><td><input type="number" id="t1" min="0" max="20" placeholder="Isi"></td></tr>
+<tr><td>Segi empat sama</td><td>4</td><td><input type="number" id="t2" min="0" max="20" placeholder="Isi"></td></tr>
+<tr><td>Segi lima sekata</td><td>5</td><td><input type="number" id="t3" min="0" max="20" placeholder="Isi"></td></tr>
+<tr><td>Segi enam sekata</td><td>6</td><td><input type="number" id="t4" min="0" max="20" placeholder="Isi"></td></tr>
+<tr><td>Segi lapan sekata</td><td>8</td><td><input type="number" id="t5" min="0" max="20" placeholder="Isi"></td></tr></table></div></section>
+<section class="card"><h2>💡 Bahagian B: Soalan Penerokaan</h2>
+<div class="q"><label for="q1">1. Berapakah bilangan paksi simetri bagi segi tiga sama sisi?</label><input id="q1" placeholder="Tulis jawapan kamu..."></div>
+<div class="q"><label for="q2">2. Berapakah bilangan paksi simetri bagi segi empat sama?</label><input id="q2" placeholder="Tulis jawapan kamu..."></div>
+<div class="q"><label for="q3">3. Apakah hubungan antara bilangan sisi dengan bilangan paksi simetri bagi poligon sekata?</label><textarea id="q3" placeholder="Terangkan pemerhatian kamu..."></textarea></div>
+<div class="q"><label for="q4">4. Mengapakah sesuatu garis boleh dianggap sebagai paksi simetri?</label><textarea id="q4" placeholder="Tulis jawapan kamu..."></textarea></div>
+<button class="primary" onclick="checkAnswers()">Semak Jawapan</button><button class="secondary" onclick="resetActivity()">Kosongkan Jawapan</button><button class="secondary" onclick="window.print()">Cetak / Simpan PDF</button>
+<div id="feedback" role="status" aria-live="polite"></div></section>
+<p class="note" style="text-align:center">Jawapan tidak dihantar atau disimpan ke pangkalan data. Untuk menghantar jawapan kepada guru, gunakan Google Form berasingan.</p>
+</main>
+<script>
+function checkAnswers(){
+ const expected=[3,4,5,6,8];let correct=0,filled=0;
+ expected.forEach((n,i)=>{let v=document.getElementById('t'+(i+1)).value.trim();if(v!==''){filled++;if(Number(v)===n)correct++;}});
+ let a=[1,2,3,4].map(i=>document.getElementById('q'+i).value.trim());
+ let answered=a.filter(Boolean).length;
+ let f=document.getElementById('feedback');f.style.display='block';
+ f.style.background=(correct===5&&answered===4)?'#e9f8ef':'#fff7df';f.style.border='1px solid #e4d59b';
+ f.innerHTML='<b>Maklum balas aktiviti</b><br>Jadual: '+correct+'/5 jawapan tepat ('+filled+'/5 diisi).<br>Soalan penerokaan: '+answered+'/4 telah dijawab.<br><br><b>Panduan jawapan jadual:</b> 3, 4, 5, 6 dan 8.<br><b>Panduan soalan:</b><br>1. 3 paksi simetri.<br>2. 4 paksi simetri.<br>3. Bagi poligon sekata, bilangan paksi simetri adalah sama dengan bilangan sisinya.<br>4. Paksi simetri membahagikan bentuk kepada dua bahagian yang sama dan sepadan. Apabila dilipat pada garis itu, kedua-dua bahagian bertindih.<br><br><span class="note">Semak jawapan penerangan kamu berdasarkan maksud, bukan perkataan yang sama tepat.</span>';
+}
+function resetActivity(){document.querySelectorAll('input,textarea').forEach(e=>e.value='');let f=document.getElementById('feedback');f.style.display='none';f.innerHTML='';}
+</script></body></html>
