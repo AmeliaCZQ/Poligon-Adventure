@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Latihan 1: Kenali Ciri-ciri Poligon Sekata</title>
+<style>
+:root{--tx:#1f2937;--mu:#4b5563;--ac:#2563eb;--bd:rgba(100,116,139,.45);--card:rgba(255,255,255,.55);--ok:#15803d;--okb:rgba(34,197,94,.2);--no:#b91c1c;--nob:rgba(239,68,68,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tx:#f3f4f6;--mu:#cbd5e1;--ac:#60a5fa;--bd:rgba(148,163,184,.5);--card:rgba(30,41,59,.55);--ok:#4ade80;--no:#f87171;color-scheme:dark}}
+:root[data-theme="dark"]{--tx:#f3f4f6;--mu:#cbd5e1;--ac:#60a5fa;--bd:rgba(148,163,184,.5);--card:rgba(30,41,59,.55);--ok:#4ade80;--no:#f87171;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:800px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.65rem;margin:.2em 0}
+h2{font-size:1.2rem;margin:0 0 .5em;color:var(--ac)}
+.mu{color:var(--mu)}
+section,.card{background:var(--card);border:1.5px solid var(--bd);border-radius:16px;padding:16px 18px;margin:16px 0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--card);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1.5px solid var(--bd);border-radius:12px;padding:8px 14px;margin:12px 0;font-weight:600}
+.pg{height:8px;flex:1;background:var(--bd);border-radius:6px;overflow:hidden;max-width:240px}
+.pg i{display:block;height:100%;width:0;background:var(--ac);transition:width .3s}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin:7px 0;border:1.5px solid var(--bd);border-radius:10px;cursor:pointer}
+.opt input{margin-top:5px;width:18px;height:18px;accent-color:var(--ac)}
+.opt.ok{background:var(--okb);border-color:var(--ok)}
+.opt.no{background:var(--nob);border-color:var(--no)}
+.opt.locked{cursor:default}
+button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:9px 16px;background:var(--ac);color:#fff;cursor:pointer;margin-top:6px}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.s{background:transparent;color:var(--tx);border:1.5px solid var(--bd)}
+.fb{margin-top:10px;padding:10px 12px;border-radius:10px;display:none}
+.fb.ok{display:block;background:var(--okb);border:1.5px solid var(--ok)}
+.fb.no{display:block;background:var(--nob);border:1.5px solid var(--no)}
+#res{display:none;text-align:center}
+#res b{font-size:1.5rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan 1: Kenali Ciri-ciri Poligon Sekata</h1>
+<section>
+<h2>Misi 1: Uji Pengetahuan Anda!</h2>
+<p>Adakah kamu sudah mengenali ciri-ciri poligon sekata? Mari uji pengetahuan kamu melalui latihan interaktif ini!</p>
+<b>Arahan:</b>
+<ol>
+<li>Baca setiap soalan dengan teliti.</li>
+<li>Pilih satu jawapan yang paling tepat.</li>
+<li>Klik butang semak untuk mengetahui keputusan.</li>
+<li>Baca maklum balas yang diberikan bagi setiap soalan.</li>
+</ol>
+<p><b>Selamat mencuba!</b></p>
+</section>
+<div class="bar"><span id="cnt">0/8 soalan dijawab</span><div class="pg"><i id="pgi"></i></div><span id="sc">Skor: 0</span></div>
+<div id="qs"></div>
+<section id="res"><h2>Keputusan Akhir</h2><p><b id="fs"></b></p><p id="ft"></p><button id="ulang">Cuba Semula</button></section>
+</main>
+<script>
+(function(){
+var Q=[
+["Mengenali Poligon Sekata","Antara berikut, yang manakah merupakan poligon sekata?",["Segi empat tepat","Segi tiga sama sisi","Segi empat yang mempunyai sisi berlainan panjang","Bentuk bulatan"],1,"Betul! Segi tiga sama sisi mempunyai 3 sisi yang sama panjang dan 3 sudut yang sama besar.","Belum tepat. Poligon sekata mesti mempunyai semua sisi sama panjang dan semua sudut sama besar. Segi tiga sama sisi memenuhi syarat ini."],
+["Bilangan Sisi","Berapakah bilangan sisi bagi sebuah segi lima sekata?",["3","4","5","6"],2,"Betul! Segi lima mempunyai 5 sisi.","Belum tepat. Nama &ldquo;segi lima&rdquo; menunjukkan poligon ini mempunyai 5 sisi."],
+["Penjuru","Apakah yang dimaksudkan dengan penjuru?",["Garis yang menghubungkan dua penjuru bukan bersebelahan","Titik pertemuan dua sisi","Ruang di luar poligon","Garis simetri"],1,"Betul! Penjuru ialah titik pertemuan dua sisi.","Belum tepat. Penjuru ialah titik pertemuan dua sisi. Garis yang menghubungkan dua penjuru bukan bersebelahan dipanggil pepenjuru."],
+["Paksi Simetri","Berapakah bilangan paksi simetri bagi sebuah segi empat sama?",["1","2","3","4"],3,"Betul! Segi empat sama mempunyai 4 paksi simetri: 2 melalui titik tengah sisi dan 2 melalui penjuru bertentangan.","Belum tepat. Segi empat sama mempunyai 4 paksi simetri, iaitu sama dengan bilangan sisinya."],
+["Sudut Pedalaman","Apakah yang dimaksudkan dengan sudut pedalaman?",["Sudut di bahagian dalam poligon","Sudut di luar poligon sahaja","Panjang sisi poligon","Garis yang menyambungkan dua penjuru"],0,"Betul! Sudut pedalaman ialah sudut yang terbentuk di bahagian dalam poligon pada setiap penjuru.","Belum tepat. Sudut pedalaman ialah sudut di bahagian dalam poligon, di antara dua sisi yang bertemu pada satu penjuru."],
+["Pepenjuru","Apakah nama garis yang menghubungkan dua penjuru yang bukan bersebelahan?",["Sisi","Paksi simetri","Pepenjuru","Jejari"],2,"Betul! Garis tersebut dinamakan pepenjuru.","Belum tepat. Garis yang menghubungkan dua penjuru bukan bersebelahan dinamakan pepenjuru."],
+["Bilangan Pepenjuru","Berapakah bilangan pepenjuru bagi sebuah segi lima sekata?",["3","4","5","6"],2,"Betul! Setiap penjuru boleh dihubungkan kepada 2 penjuru bukan bersebelahan. Jadi, (5 &times; 2) &divide; 2 = 5 pepenjuru.","Belum tepat. Setiap penjuru ada 2 pepenjuru, jadi 5 &times; 2 = 10. Setiap pepenjuru dikira dua kali, maka 10 &divide; 2 = 5."],
+["Ciri Poligon Sekata","Antara berikut, yang manakah benar tentang poligon sekata?",["Semua sisinya sama panjang sahaja","Semua sudutnya sama besar sahaja","Semua sisi sama panjang dan semua sudut sama besar","Mempunyai bilangan sisi yang tidak tetap"],2,"Betul! Poligon sekata mempunyai semua sisi sama panjang dan semua sudut sama besar.","Belum tepat. Poligon sekata mesti memenuhi kedua-dua syarat: semua sisi sama panjang dan semua sudut sama besar."]
+];
+var L="ABCD",st=[],box=document.getElementById("qs");
+function render(){
+box.innerHTML="";st=Q.map(function(){return{sel:-1,done:false}});
+Q.forEach(function(q,i){
+var o=q[2].map(function(t,j){return '<label class="opt" data-j="'+j+'"><input type="radio" name="q'+i+'" value="'+j+'"><span><b>'+L[j]+'.</b> '+t+'</span></label>'}).join("");
+box.insertAdjacentHTML("beforeend",'<div class="card" id="c'+i+'"><h2>Soalan '+(i+1)+' &ndash; '+q[0]+'</h2><p><b>'+q[1]+'</b></p>'+o+'<button disabled>Semak</button><div class="fb" role="status"></div></div>')});
+Q.forEach(function(q,i){
+var c=document.getElementById("c"+i),b=c.querySelector("button");
+c.querySelectorAll("input").forEach(function(r){r.addEventListener("change",function(){if(st[i].done)return;st[i].sel=+r.value;b.disabled=false;upd()})});
+b.addEventListener("click",function(){
+if(st[i].done||st[i].sel<0)return;
+st[i].done=true;b.disabled=true;
+var ok=st[i].sel===q[3],fb=c.querySelector(".fb");
+c.querySelectorAll(".opt").forEach(function(l){var j=+l.getAttribute("data-j");l.classList.add("locked");l.querySelector("input").disabled=true;if(j===q[3])l.classList.add("ok");else if(j===st[i].sel)l.classList.add("no")});
+fb.className="fb "+(ok?"ok":"no");fb.innerHTML=(ok?"&#10004; ":"&#10008; ")+(ok?q[4]:q[5]+" Jawapan betul: <b>"+L[q[3]]+"</b>.");
+upd()})});
+upd()}
+function upd(){
+var d=0,s=0;st.forEach(function(x,i){if(x.done){d++;if(x.sel===Q[i][3])s++}});
+document.getElementById("cnt").textContent=d+"/8 soalan dijawab";
+document.getElementById("sc").textContent="Skor: "+s;
+document.getElementById("pgi").style.width=(d/8*100)+"%";
+var r=document.getElementById("res");
+if(d===8){r.style.display="block";document.getElementById("fs").textContent="Skor kamu: "+s+" / 8";
+document.getElementById("ft").textContent=s===8?"Hebat! Kamu sudah menguasai ciri-ciri poligon sekata.":s>=5?"Bagus! Baca semula maklum balas bagi soalan yang salah dan cuba lagi.":"Jangan putus asa! Baca semula maklum balas dan cuba semula."}
+else r.style.display="none"}
+document.getElementById("ulang").onclick=function(){render();window.scrollTo(0,0)};
+render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Latihan 2: Lengkapkan Jadual</title>
+<style>
+:root{--tx:#1f2937;--mu:#4b5563;--ac:#2563eb;--bd:rgba(100,116,139,.45);--card:rgba(255,255,255,.55);--in:rgba(255,255,255,.85);--intx:#111827;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tx:#f3f4f6;--mu:#cbd5e1;--ac:#60a5fa;--bd:rgba(148,163,184,.5);--card:rgba(30,41,59,.55);--in:rgba(15,23,42,.8);--intx:#f9fafb;color-scheme:dark}}
+:root[data-theme="dark"]{--tx:#f3f4f6;--mu:#cbd5e1;--ac:#60a5fa;--bd:rgba(148,163,184,.5);--card:rgba(30,41,59,.55);--in:rgba(15,23,42,.8);--intx:#f9fafb;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.7rem;margin:.2em 0}
+h2{font-size:1.25rem;margin:0 0 .6em;color:var(--ac)}
+.mu{color:var(--mu)}
+section{background:var(--card);border:1.5px solid var(--bd);border-radius:16px;padding:16px 18px;margin:18px 0}
+.q{margin:14px 0;padding-top:10px;border-top:1px dashed var(--bd)}
+label.l{display:block;font-weight:600;margin-bottom:4px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--intx);background:var(--in);border:1.5px solid var(--bd);border-radius:10px;padding:9px 11px}
+textarea{min-height:70px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--ac);border-color:var(--ac)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{border:1.5px solid var(--bd);padding:6px;text-align:center}
+th{background:var(--card);font-size:.9rem}
+td.n{text-align:left;font-weight:600;white-space:nowrap}
+td input{text-align:center;padding:7px 4px;min-width:60px}
+button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:10px 16px;background:var(--ac);color:#fff;cursor:pointer;margin:4px 8px 4px 0}
+button.s{background:transparent;color:var(--tx);border:1.5px solid var(--bd)}
+#msg{min-height:1.5em;color:var(--mu)}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan 2: Lengkapkan Jadual</h1>
+<p class="mu">Poligon Sekata &middot; Jawapan kamu disimpan automatik pada peranti ini.</p>
+<section>
+<h2>Objektif Aktiviti</h2>
+<p>Pada akhir aktiviti ini, murid dapat mengenal pasti dan membandingkan ciri-ciri poligon sekata berdasarkan bilangan sisi, penjuru, paksi simetri, sudut pedalaman dan pepenjuru.</p>
+<h2>Arahan Aktiviti</h2>
+<ol>
+<li>Perhatikan setiap bentuk poligon sekata yang diberikan.</li>
+<li>Kenal pasti bilangan sisi dan penjuru bagi setiap poligon.</li>
+<li>Tentukan bilangan paksi simetri dan pepenjuru.</li>
+<li>Kenal pasti bilangan sudut pedalaman bagi setiap poligon.</li>
+<li>Lengkapkan jadual berdasarkan pemerhatian dan pengetahuan kamu.</li>
+<li>Semak semula jawapan sebelum menghantar latihan.</li>
+</ol>
+<div class="row">
+<div><label class="l" for="nama">Nama murid</label><input type="text" id="nama" data-k="nama"></div>
+<div><label class="l" for="kelas">Kelas</label><input type="text" id="kelas" data-k="kelas"></div>
+</div>
+</section>
+
+<section>
+<h2>Bahagian A: Lengkapkan Jadual</h2>
+<p>Lengkapkan tempat kosong dalam jadual berikut.</p>
+<div class="tw"><table>
+<thead><tr><th>Bentuk Poligon</th><th>Bilangan Sisi</th><th>Bilangan Penjuru</th><th>Bilangan Paksi Simetri</th><th>Bilangan Sudut Pedalaman</th><th>Bilangan Pepenjuru</th></tr></thead>
+<tbody id="tb"></tbody>
+</table></div>
+</section>
+
+<section>
+<h2>Bahagian B: Jawab Soalan</h2>
+<div id="bb"></div>
+</section>
+
+<section>
+<h2>Cabaran Tambahan</h2>
+<p>Pilih satu poligon sekata yang belum disenaraikan dalam jadual. Nyatakan nama poligon tersebut dan lengkapkan ciri-cirinya berdasarkan lima aspek yang telah dipelajari.</p>
+<div id="ct" class="row"></div>
+</section>
+
+<section>
+<h2>Refleksi</h2>
+<div class="q" style="border:0;padding:0"><label class="l">Antara lima ciri poligon sekata yang dipelajari, ciri manakah yang paling mudah kamu kenal pasti? Mengapa?</label><textarea data-k="rf"></textarea></div>
+</section>
+
+<section>
+<button id="salin">Salin Semua Jawapan</button>
+<button class="s" id="padam">Padam Semua Jawapan</button>
+<p id="msg" role="status"></p>
+<p class="mu">Selepas menyalin, tampal jawapan ke dalam dokumen atau hantar kepada guru.</p>
+</section>
+</main>
+<script>
+(function(){
+var S="latihan2-mat",D={};
+try{D=JSON.parse(localStorage.getItem(S)||"{}")||{}}catch(e){D={}}
+function save(){try{localStorage.setItem(S,JSON.stringify(D))}catch(e){}}
+function h(id,s){document.getElementById(id).insertAdjacentHTML("beforeend",s)}
+var P=["Segi tiga sama sisi","Segi empat sama","Segi lima sekata","Segi enam sekata","Segi lapan sekata"];
+var C=["Sisi","Penjuru","Paksi simetri","Sudut pedalaman","Pepenjuru"];
+P.forEach(function(p,i){var r='<tr><td class="n">'+p+'</td>';for(var j=0;j<5;j++)r+='<td><input type="text" inputmode="numeric" aria-label="'+p+': '+C[j]+'" data-k="t'+i+'_'+j+'"></td>';h("tb",r+'</tr>')});
+["Apakah hubungan antara bilangan sisi dengan bilangan penjuru bagi poligon sekata?","Apakah hubungan antara bilangan sisi dengan bilangan paksi simetri?","Mengapakah segi tiga sama sisi tidak mempunyai pepenjuru?","Apakah yang berlaku kepada bilangan pepenjuru apabila bilangan penjuru bertambah?"].forEach(function(t,i){h("bb",'<div class="q"><label class="l">'+(i+1)+'. '+t+'</label><textarea data-k="b'+(i+1)+'"></textarea></div>')});
+h("ct",'<div style="grid-column:1/-1"><label class="l">Nama poligon:</label><input type="text" data-k="ct_n"></div>');
+C.forEach(function(t,i){h("ct",'<div><label class="l">Bilangan '+t.toLowerCase()+':</label><input type="text" data-k="ct_'+i+'"></div>')});
+var fields=[].slice.call(document.querySelectorAll("[data-k]"));
+fields.forEach(function(f){var k=f.getAttribute("data-k");if(D[k])f.value=D[k];f.addEventListener("input",function(){D[k]=f.value;save()})});
+function build(){
+var o="LATIHAN 2: LENGKAPKAN JADUAL\nNama: "+(D.nama||"")+"\nKelas: "+(D.kelas||"")+"\n\nBAHAGIAN A\nPoligon | Sisi | Penjuru | Paksi simetri | Sudut pedalaman | Pepenjuru\n";
+P.forEach(function(p,i){var v=[];for(var j=0;j<5;j++)v.push(D["t"+i+"_"+j]||"-");o+=p+" | "+v.join(" | ")+"\n"});
+o+="\nBAHAGIAN B\n";
+for(var i=1;i<=4;i++)o+=i+". "+(D["b"+i]||"")+"\n";
+o+="\nCABARAN TAMBAHAN\nNama poligon: "+(D.ct_n||"")+"\n";
+C.forEach(function(t,i){o+="Bilangan "+t.toLowerCase()+": "+(D["ct_"+i]||"")+"\n"});
+o+="\nREFLEKSI\n"+(D.rf||"")+"\n";
+return o}
+var m=document.getElementById("msg");
+document.getElementById("salin").onclick=function(){
+var t=build();
+try{navigator.clipboard.writeText(t).then(function(){m.textContent="Jawapan telah disalin."},fb)}catch(e){fb()}
+function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand("copy")}catch(e){}document.body.removeChild(a);m.textContent=ok?"Jawapan telah disalin.":"Gagal menyalin. Sila salin jawapan secara manual."}
+};
+document.getElementById("padam").onclick=function(){
+var p=this;if(!p.dataset.c){p.dataset.c="1";p.textContent="Klik sekali lagi untuk padam";setTimeout(function(){delete p.dataset.c;p.textContent="Padam Semua Jawapan"},4000);return}delete p.dataset.c;p.textContent="Padam Semua Jawapan";
+D={};save();fields.forEach(function(f){f.value=""});m.textContent="Semua jawapan telah dipadam."};
+})();
+</script>
+</body>
+</html>
