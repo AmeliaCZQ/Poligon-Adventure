@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Latihan 3: Cabaran Matematik</title>
+<style>
+:root{--tx:#1f2937;--mu:#4b5563;--ac:#2563eb;--bd:rgba(100,116,139,.45);--card:rgba(255,255,255,.55);--in:rgba(255,255,255,.85);--intx:#111827;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tx:#f3f4f6;--mu:#cbd5e1;--ac:#60a5fa;--bd:rgba(148,163,184,.5);--card:rgba(30,41,59,.55);--in:rgba(15,23,42,.8);--intx:#f9fafb;color-scheme:dark}}
+:root[data-theme="dark"]{--tx:#f3f4f6;--mu:#cbd5e1;--ac:#60a5fa;--bd:rgba(148,163,184,.5);--card:rgba(30,41,59,.55);--in:rgba(15,23,42,.8);--intx:#f9fafb;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:820px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.7rem;margin:.2em 0}
+h2{font-size:1.25rem;margin:0 0 .6em;color:var(--ac)}
+p,li{color:var(--tx)}
+.mu{color:var(--mu)}
+section{background:var(--card);border:1.5px solid var(--bd);border-radius:16px;padding:16px 18px;margin:18px 0}
+.q{margin:14px 0;padding-top:10px;border-top:1px dashed var(--bd)}
+.q:first-of-type{border-top:0;padding-top:0}
+label.l{display:block;font-weight:600;margin-bottom:4px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--intx);background:var(--in);border:1.5px solid var(--bd);border-radius:10px;padding:9px 11px}
+textarea{min-height:70px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--ac);border-color:var(--ac)}
+ul.cl{margin:.3em 0 .6em;padding-left:1.2em}
+.opt{display:inline-flex;gap:6px;align-items:center;margin:2px 14px 6px 0;font-weight:600}
+.opt input{width:20px;height:20px;accent-color:var(--ac)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:10px 16px;background:var(--ac);color:#fff;cursor:pointer;margin:4px 8px 4px 0}
+button.s{background:transparent;color:var(--tx);border:1.5px solid var(--bd)}
+#msg{min-height:1.5em;color:var(--mu)}
+</style>
+</head>
+<body>
+<main>
+<h1>Latihan 3: Cabaran Matematik</h1>
+<p class="mu">Poligon Sekata &middot; Jawapan kamu disimpan automatik pada peranti ini.</p>
+<section>
+<h2>Objektif Aktiviti</h2>
+<p>Pada akhir aktiviti ini, murid dapat mengaplikasikan pengetahuan tentang ciri-ciri poligon sekata untuk menyelesaikan masalah matematik melalui pemerhatian, penaakulan dan penyelesaian masalah.</p>
+<h2>Arahan Aktiviti</h2>
+<ol>
+<li>Baca setiap soalan dengan teliti.</li>
+<li>Perhatikan maklumat dan bentuk poligon yang diberikan.</li>
+<li>Gunakan pengetahuan tentang sisi, penjuru, paksi simetri, sudut pedalaman dan pepenjuru.</li>
+<li>Tunjukkan cara penyelesaian bagi soalan yang memerlukan pengiraan.</li>
+<li>Berikan alasan yang sesuai untuk menyokong jawapan kamu.</li>
+</ol>
+<div class="row">
+<div><label class="l" for="nama">Nama murid</label><input type="text" id="nama" data-k="nama"></div>
+<div><label class="l" for="kelas">Kelas</label><input type="text" id="kelas" data-k="kelas"></div>
+</div>
+</section>
+
+<section>
+<h2>Cabaran 1: Siapakah Saya?</h2>
+<p>Baca petunjuk berikut dan kenal pasti poligon sekata yang dimaksudkan.</p>
+<div class="q"><b>Petunjuk A</b><ul class="cl"><li>Saya mempunyai 5 sisi.</li><li>Saya mempunyai 5 penjuru.</li><li>Saya mempunyai 5 paksi simetri.</li></ul>
+<label class="l">Nama poligon:</label><input type="text" data-k="c1a"></div>
+<div class="q"><b>Petunjuk B</b><ul class="cl"><li>Saya mempunyai 6 sisi.</li><li>Saya mempunyai 6 penjuru.</li><li>Saya mempunyai 6 paksi simetri.</li></ul>
+<label class="l">Nama poligon:</label><input type="text" data-k="c1b"></div>
+<div class="q"><b>Petunjuk C</b><ul class="cl"><li>Saya mempunyai 3 sisi yang sama panjang.</li><li>Saya mempunyai 3 sudut yang sama besar.</li><li>Saya tidak mempunyai pepenjuru.</li></ul>
+<label class="l">Nama poligon:</label><input type="text" data-k="c1c"></div>
+</section>
+
+<section>
+<h2>Cabaran 2: Betul atau Salah?</h2>
+<p>Tentukan sama ada pernyataan berikut betul atau salah. Berikan alasan bagi setiap jawapan.</p>
+<div id="bs"></div>
+</section>
+
+<section>
+<h2>Cabaran 3: Fikir dan Selesaikan</h2>
+<p>Sebuah poligon sekata mempunyai 8 sisi.</p>
+<div id="c3"></div>
+<div class="q"><label class="l">Ruang pengiraan / cara penyelesaian (jika perlu):</label><textarea data-k="c3kira"></textarea></div>
+</section>
+
+<section>
+<h2>Cabaran 4: Cipta Poligon Kamu!</h2>
+<p>Gunakan Polypad untuk membina satu poligon sekata pilihan kamu. Kemudian, lengkapkan maklumat berikut:</p>
+<div id="c4" class="row"></div>
+<div class="q"><label class="l">Huraian lukisan / ciri-ciri yang ditandakan pada ruang kerja Polypad:</label><textarea data-k="c4lukis"></textarea></div>
+</section>
+
+<section>
+<h2>Refleksi Akhir</h2>
+<div id="rf"></div>
+</section>
+
+<section>
+<button id="salin">Salin Semua Jawapan</button>
+<button class="s" id="padam">Padam Semua Jawapan</button>
+<p id="msg" role="status"></p>
+<p class="mu">Selepas menyalin, tampal jawapan ke dalam dokumen atau hantar kepada guru.</p>
+</section>
+</main>
+<script>
+(function(){
+var S="latihan3-mat",D={};
+try{D=JSON.parse(localStorage.getItem(S)||"{}")||{}}catch(e){D={}}
+function save(){try{localStorage.setItem(S,JSON.stringify(D))}catch(e){}}
+function h(id,s){document.getElementById(id).insertAdjacentHTML("beforeend",s)}
+var bs=["Semua poligon sekata mempunyai sisi yang sama panjang.","Bilangan sisi bagi poligon sekata sentiasa sama dengan bilangan penjuru.","Segi empat sama mempunyai 4 paksi simetri.","Segi tiga sama sisi mempunyai 3 pepenjuru.","Bilangan paksi simetri bagi segi lima sekata ialah 5."];
+bs.forEach(function(t,i){var n=i+1;h("bs",'<div class="q"><p><b>'+n+'.</b> '+t+'</p><label class="opt"><input type="radio" name="bs'+n+'" value="Betul"> Betul</label><label class="opt"><input type="radio" name="bs'+n+'" value="Salah"> Salah</label><label class="l">Alasan:</label><textarea data-k="bs'+n+'a"></textarea></div>')});
+["Apakah nama poligon tersebut?","Berapakah bilangan penjuru yang dimilikinya?","Berapakah bilangan paksi simetrinya?","Berapakah bilangan sudut pedalamannya?","Berapakah bilangan pepenjurunya?"].forEach(function(t,i){h("c3",'<div class="q"><label class="l">'+(i+1)+'. '+t+'</label><input type="text" data-k="c3_'+(i+1)+'"></div>')});
+["Nama poligon","Bilangan sisi","Bilangan penjuru","Bilangan paksi simetri","Bilangan sudut pedalaman","Bilangan pepenjuru"].forEach(function(t,i){h("c4",'<div><label class="l">'+t+':</label><input type="text" data-k="c4_'+i+'"></div>')});
+["Apakah ciri poligon sekata yang paling mudah kamu kenal pasti?","Apakah cabaran yang kamu hadapi semasa menyelesaikan aktiviti ini?","Bagaimanakah pengetahuan tentang poligon sekata membantu kamu mengenal pasti bentuk dalam kehidupan seharian?"].forEach(function(t,i){h("rf",'<div class="q"><label class="l">'+(i+1)+'. '+t+'</label><textarea data-k="rf'+(i+1)+'"></textarea></div>')});
+var fields=[].slice.call(document.querySelectorAll("[data-k]")),radios=[].slice.call(document.querySelectorAll("input[type=radio]"));
+fields.forEach(function(f){var k=f.getAttribute("data-k");if(D[k])f.value=D[k];f.addEventListener("input",function(){D[k]=f.value;save()})});
+radios.forEach(function(r){if(D[r.name]===r.value)r.checked=true;r.addEventListener("change",function(){D[r.name]=r.value;save()})});
+function label(f){var l=f.parentNode.querySelector("label.l");return l?l.textContent:f.getAttribute("data-k")}
+function build(){
+var o="LATIHAN 3: CABARAN MATEMATIK\nNama: "+(D.nama||"")+"\nKelas: "+(D.kelas||"")+"\n\n";
+o+="CABARAN 1\nA: "+(D.c1a||"")+"\nB: "+(D.c1b||"")+"\nC: "+(D.c1c||"")+"\n\nCABARAN 2\n";
+for(var i=1;i<=5;i++)o+=i+". "+(D["bs"+i]||"-")+" | Alasan: "+(D["bs"+i+"a"]||"")+"\n";
+o+="\nCABARAN 3\n";
+["Nama","Penjuru","Paksi simetri","Sudut pedalaman","Pepenjuru"].forEach(function(t,i){o+=(i+1)+". "+t+": "+(D["c3_"+(i+1)]||"")+"\n"});
+o+="Pengiraan: "+(D.c3kira||"")+"\n\nCABARAN 4\n";
+["Nama poligon","Sisi","Penjuru","Paksi simetri","Sudut pedalaman","Pepenjuru"].forEach(function(t,i){o+=t+": "+(D["c4_"+i]||"")+"\n"});
+o+="Huraian lukisan: "+(D.c4lukis||"")+"\n\nREFLEKSI AKHIR\n";
+for(var j=1;j<=3;j++)o+=j+". "+(D["rf"+j]||"")+"\n";
+return o}
+var m=document.getElementById("msg");
+document.getElementById("salin").onclick=function(){
+var t=build();
+try{navigator.clipboard.writeText(t).then(function(){m.textContent="Jawapan telah disalin."},fb)}catch(e){fb()}
+function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand("copy")}catch(e){}document.body.removeChild(a);m.textContent=ok?"Jawapan telah disalin.":"Gagal menyalin. Sila salin jawapan secara manual."}
+};
+document.getElementById("padam").onclick=function(){
+if(!window.confirm("Padam semua jawapan?"))return;
+D={};save();fields.forEach(function(f){f.value=""});radios.forEach(function(r){r.checked=false});m.textContent="Semua jawapan telah dipadam."};
+})();
+</script>
+</body>
+</html>
